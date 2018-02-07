@@ -957,7 +957,7 @@ TEST_CASE("free_symbols: Basic", "[basic]")
 
     set_basic s = free_symbols(*r1);
     for(auto i = s.begin(); i != s.end(); i++)
-        cout << "Hello" << **i << endl;
+        std::cout << "Hello" << **i << std::endl;
     REQUIRE(s.size() == 3);
     REQUIRE(s.count(x) == 1);
     REQUIRE(s.count(y) == 1);
