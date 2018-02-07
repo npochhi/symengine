@@ -956,10 +956,10 @@ TEST_CASE("free_symbols: Basic", "[basic]")
     r1 = add(x, add(z, pow(y, x)));
 
     set_basic s = free_symbols(*r1);
-    REQUIRE(s.size() == 3);
     std::cout << "Hello" << std::endl;
     for (auto it = s.begin(); it != s.end(); it++)
         std::cout <<"hello" <<  **it << std::endl;
+    REQUIRE(s.size() == 3);
     REQUIRE(s.count(x) == 1);
     REQUIRE(s.count(y) == 1);
     REQUIRE(s.count(z) == 1);
