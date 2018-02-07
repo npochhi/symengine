@@ -957,6 +957,9 @@ TEST_CASE("free_symbols: Basic", "[basic]")
 
     set_basic s = free_symbols(*r1);
     REQUIRE(s.size() == 3);
+    std::cout << "Hello" << std::endl;
+    for (auto it = s.begin(); it != s.end(); it++)
+        std::cout <<"hello" <<  **it << std::endl;
     REQUIRE(s.count(x) == 1);
     REQUIRE(s.count(y) == 1);
     REQUIRE(s.count(z) == 1);
@@ -964,6 +967,9 @@ TEST_CASE("free_symbols: Basic", "[basic]")
 
     r1 = function_symbol("f", mul(x, integer(2)))->diff(x);
     s = free_symbols(*r1);
+    std::cout << "Hello" << std::endl;
+    for (auto it = s.begin(); it != s.end(); it++)
+        std::cout <<"hello" <<  **it << std::endl;
     REQUIRE(s.size() == 1);
     REQUIRE(s.count(x) == 1);
 
