@@ -956,6 +956,8 @@ TEST_CASE("free_symbols: Basic", "[basic]")
     r1 = add(x, add(z, pow(y, x)));
 
     set_basic s = free_symbols(*r1);
+    for(auto i = s.begin(); i != s.end(); i++)
+        cout << "Hello" << **i << endl;
     REQUIRE(s.size() == 3);
     REQUIRE(s.count(x) == 1);
     REQUIRE(s.count(y) == 1);
@@ -964,6 +966,8 @@ TEST_CASE("free_symbols: Basic", "[basic]")
 
     r1 = function_symbol("f", mul(x, integer(2)))->diff(x);
     s = free_symbols(*r1);
+    for(auto i = s.begin(); i != s.end(); i++)
+    cout << "Hello" << **i << endl;
     REQUIRE(s.size() == 1);
     REQUIRE(s.count(x) == 1);
 
